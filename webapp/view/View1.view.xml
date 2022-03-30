@@ -1,0 +1,68 @@
+<mvc:View
+    controllerName="sap.demo.demo.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m">
+	 
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+						<Toolbar class="sapUiMediumMarginTop" id="toolbar1">
+							<Button
+								id="BadgedButton"
+								class="sapUiTinyMarginBeginEnd"
+								icon="sap-icon://cart"
+								type="Default"
+								text="Go to Cart"
+								press="onCart">
+								<customData>
+									<BadgeCustomData key="badge" value="{CartCount>/CartCount}" visible=""/>
+								</customData>
+							</Button>							
+							<ToolbarSpacer/>						 
+							<SearchField liveChange=".onSearch" width="50%" placeholder="Search Product" />
+						</Toolbar>
+
+						<Table 
+							id="tableId" 
+							inset="false" 
+							items="{/Products}"
+							growing="true" 
+							growingThreshold="20"
+							growingScrollToLoad="false"
+							mode="SingleSelect"
+							selectionChange = "selectionChange"	>
+							<columns>
+								<Column width="12em">
+									<ObjectIdentifier text="{i18n>ProductName}"/>
+								</Column>
+								<Column>
+									<Text text="{i18n>SupplierID}"/>
+								</Column>
+								<Column>
+									<Text text="{i18n>CategoryID}"/>
+								</Column>
+								<Column>
+									<ObjectNumber number="{i18n>UnitPrice}"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem >
+									<cells>
+										<ObjectIdentifier title="{ProductName}"/>
+										<Text text="{SupplierID}"/>
+										<Text text="{CategoryID}"/>
+										<ObjectNumber
+											number="{UnitPrice}" />
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

@@ -1,0 +1,47 @@
+<mvc:View
+    controllerName="sap.demo.demo.controller.View3"
+    xmlns:mvc="sap.ui.core.mvc"
+	xmlns:l="sap.ui.layout"
+    displayBlock="true"
+    xmlns="sap.m"	
+	>
+	 
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>Cartview}"
+					showNavButton="true" 
+					navButtonPress="onNavBack">
+					<content>
+						 <l:VerticalLayout class="sapUiContentPadding" width="100%">		 
+							<MessageStrip
+								type="Error"
+								text="There is a bug in the cart count mechanism: Hint: https://ui5.sap.com/#/api/sap.m.StepInput" 
+							/>
+							<MessageStrip
+								type="Error"
+								text="Text on Cart and Search are hardcoded, need to be translated" 
+							/>
+							<MessageStrip
+								type="Error"
+								text="List cart items in a container of some sorts" 
+							/>								
+							<MessageStrip
+								type="Error"
+								text="Remove items from model container via a remove button.  Bonus points: modify quantity" 
+							/>								
+							<MessageStrip
+								type="Error"
+								text="Add a new view with a form for shipping details details for user" 
+							/>								
+							<MessageStrip
+								type="Error"
+								text="Make the app mobile friendly. Maybe hide 2 middle columns. Your choice" 
+							/>								
+						</l:VerticalLayout>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
